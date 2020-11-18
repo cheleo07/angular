@@ -1,1 +1,11 @@
-<p>user works!</p>
+<h2>My Users :</h2>
+<ul class="users">
+  <li *ngFor="let user of users" (click)="onSelect(user)"
+    [class.selected]="user === selectedUser">
+    <a> {{ user.name.first }} </a>
+  </li>
+</ul>
+
+
+
+<app-equipe></app-equipe>
