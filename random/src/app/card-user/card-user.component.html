@@ -1,9 +1,14 @@
-<div class="card" style="width: 18rem;">
-  <img src="" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"></h5>
-    <p class="card-text">info 1</p>
-    <p class="card-text">info 2</p>
-    <p class="card-text">info 3</p>
+<div *ngIf="user">
+  <div class="card" style="width: 18rem;">
+    <img src="./src/images/profil_defaut.png" class="card-img-top" alt="image de profil par défaut">
+    <div class="card-body">
+      <h5 class="card-title">{{user.name.first | uppercase | titlecase }} Details</h5>
+      <p class="card-text">info 1</p>
+      <p class="card-text">info 2</p>
+      <p class="card-text">info 3</p>
+    </div>
   </div>
 </div>
+
+<button (click)="goBack()">go back</button>
+

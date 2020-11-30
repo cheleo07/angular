@@ -1,5 +1,3 @@
-import { UserService } from './user.service';
-import { User } from './user/user.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,6 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
-
   title = 'random';
 }

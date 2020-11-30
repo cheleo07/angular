@@ -1,11 +1,14 @@
+
 <h2>My Users :</h2>
 <ul class="users">
   <li *ngFor="let user of users" (click)="onSelect(user)"
     [class.selected]="user === selectedUser">
-    <a> {{ user.name.first }} </a>
+      <span class="badge"> {{ user.name.first }} </span>
   </li>
+
+
 </ul>
 
 
 
-<app-equipe></app-equipe>
+<app-messages></app-messages>

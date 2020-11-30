@@ -9,7 +9,7 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 })
 export class MessagesComponent implements OnInit {
 
-  constructor(private messageService: MessageService) { }
+  constructor(public messageService: MessageService) { }
 
   ngOnInit(): void {
   }

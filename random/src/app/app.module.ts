@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { UserService } from './user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardUserComponent } from './card-user/card-user.component';
 import { EquipeComponent } from './equipe/equipe.component';
 import { MessagesComponent } from './messages/messages.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { MessagesComponent } from './messages/messages.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [UserService],

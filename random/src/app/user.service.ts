@@ -16,6 +16,7 @@ export class UserService {
 
   selectedUser = new BehaviorSubject({id: null, name: null});
 
+  // tslint:disable-next-line: variable-name
   constructor(private _http: HttpClient, private messageService: MessageService) { }
 
   getUsers(): Observable<any> {
@@ -23,12 +24,11 @@ export class UserService {
   }
 
   selectUser(user: User): void{
-    this.messageService.add(this.selectedUser.pipe(map(data => data.name.first)));
     this.selectedUser.next(user);
   }
 
   getUser(id: number): Observable<User>{
-    return of(USERS.find(user => user.id === id));
+    return of(USERS.find(user => user.id.value === id));
   }
 
 }
