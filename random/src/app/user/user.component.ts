@@ -14,6 +14,8 @@ export class UserComponent implements OnInit {
 
   users: User[];
 
+  tabUsers: Array<User> = [];
+
   selectedUser: User;
 
   constructor(private userService: UserService, private messageService: MessageService) {}
@@ -22,7 +24,6 @@ export class UserComponent implements OnInit {
     this.userService.getUsers()
       .subscribe(data => {
         this.users = data;
-        console.log(this.users[0].name.first);
       });
 
     this.userService.selectedUser
@@ -33,9 +34,11 @@ export class UserComponent implements OnInit {
 
   onSelect(user: User): void{
     this.userService.selectUser(user);
-    console.log(this.userService.selectUser(user));
     this.messageService.add(`User selectionner = ${user.name.first}`);
     this.selectedUser = user;
+
+    this.tabUsers.push(user);
+
 
   }
 
